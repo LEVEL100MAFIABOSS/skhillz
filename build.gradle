@@ -1,0 +1,66 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+repositories {
+	mavenCentral()
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"fnmc" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "fnmc-test"
+		enableGameTests = true
+		eula = true
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Chicory runs the Rust mechanics (rust/crates/fn-mc compiled to WebAssembly); bundled inside the mod jar
+	implementation "com.dylibso.chicory:runtime:${project.chicory_version}"
+	implementation "com.dylibso.chicory:wasm:${project.chicory_version}"
+	include "com.dylibso.chicory:runtime:${project.chicory_version}"
+	include "com.dylibso.chicory:wasm:${project.chicory_version}"
+}
+
+// The mechanics module must be built first: see .github/workflows/build.yml or README (cargo build ... --target wasm32-unknown-unknown)
+tasks.register('checkWasm') {
+	def wasm = file('src/main/resources/fnmc/fn_mc.wasm')
+	doLast {
+		if (!wasm.exists()) {
+			throw new GradleException("Missing ${wasm}: build it with\n  cd rust && cargo build -p fn-mc --release --target wasm32-unknown-unknown\n  then copy rust/target/wasm32-unknown-unknown/release/fn_mc.wasm there")
+		}
+	}
+}
+processResources {
+	dependsOn 'checkWasm'
+	def version = project.version
+	inputs.property "version", version
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}

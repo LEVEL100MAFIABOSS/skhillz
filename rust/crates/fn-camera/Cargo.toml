@@ -1,0 +1,18 @@
+[package]
+name = "fn-camera"
+version.workspace = true
+edition.workspace = true
+description = "Athena third-person camera (pure logic, metres)"
+
+[dependencies]
+fn-live = { path = "../fn-live" }
+fn-terrain = { path = "../fn-terrain" } # TERRAIN: the landscape as the ground
+glam.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+fn-testdata = { path = "../fn-testdata" }
+
+[lints.rust]
+unsafe_code = "forbid"
+dead_code = "allow"

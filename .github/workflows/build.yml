@@ -1,0 +1,50 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rust toolchain (+ wasm32 target)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Rust tests (mechanics kit + Minecraft bridge)
+        working-directory: rust
+        run: cargo test --workspace
+
+      - name: Build the mechanics as WebAssembly
+        working-directory: rust
+        run: |
+          cargo build -p fn-mc --release --target wasm32-unknown-unknown
+          mkdir -p ../src/main/resources/fnmc
+          cp target/wasm32-unknown-unknown/release/fn_mc.wasm ../src/main/resources/fnmc/
+          ls -l ../src/main/resources/fnmc/fn_mc.wasm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build the mod and run the game tests in a 26.3 server
+        run: |
+          chmod +x gradlew
+          ./gradlew build --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fn-mechanics-mc
+          path: |
+            build/libs/*.jar
+            build/run/**/logs/*.log
+            run/logs/*.log
+          if-no-files-found: ignore

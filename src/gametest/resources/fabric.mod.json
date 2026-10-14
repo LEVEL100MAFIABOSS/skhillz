@@ -1,0 +1,10 @@
+{
+	"schemaVersion": 1,
+	"id": "fnmc-test",
+	"version": "1.0.0",
+	"name": "FN Mechanics tests",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": ["net.fnmc.test.FnMcGameTest"]
+	}
+}

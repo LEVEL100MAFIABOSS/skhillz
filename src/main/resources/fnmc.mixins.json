@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.fnmc.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"EntityCollideMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

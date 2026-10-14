@@ -1,0 +1,22 @@
+[package]
+name = "fn-rules"
+version.workspace = true
+edition.workspace = true
+description = "Battle Royale match rules of the 1.8 runtime (fall damage, storm, pickups, chests / loot, traps), engine-free"
+
+[features]
+default = []
+# Read loot / trap tables straight from a Fortnite 1.8 install (only needed to bake mechanics-data.json).
+paks = ["dep:fn-pak", "dep:fn-uasset"]
+
+[dependencies]
+fn-live = { path = "../fn-live" }
+fn-movement = { path = "../fn-movement" }
+glam = { workspace = true, features = ["serde"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+fn-pak = { path = "../fn-pak", optional = true }
+fn-uasset = { path = "../fn-uasset", optional = true }
+
+[lints.rust]
+unsafe_code = "forbid"

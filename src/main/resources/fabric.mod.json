@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "fnmc",
+	"version": "${version}",
+	"name": "FN Mechanics",
+	"description": "Fortnite 1.8 building and pickaxe mechanics (from FortniteRuntime-rs) running in Minecraft. Needed on the server and on every client.",
+	"authors": ["Sky"],
+	"license": "All-Rights-Reserved",
+	"icon": "assets/fnmc/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["net.fnmc.FnMc"],
+		"client": ["net.fnmc.client.FnMcClient"]
+	},
+	"mixins": ["fnmc.mixins.json"],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

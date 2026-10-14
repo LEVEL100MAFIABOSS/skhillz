@@ -1,0 +1,30 @@
+[package]
+name = "fn-building"
+edition.workspace = true
+version.workspace = true
+description = "Athena 1.8 building: grid, pieces, placement, editing, structural support, damage, doors. Engine-free; data from mechanics-data.json or (feature `paks`) a 1.8 install."
+
+[features]
+default = []
+# Read the piece catalog / edit database straight from a Fortnite 1.8 install (only needed to bake mechanics-data.json).
+paks = ["dep:fn-pak", "dep:fn-uasset", "dep:fn-mesh", "dep:fn-ueio"]
+
+[dependencies]
+fn-live = { path = "../fn-live" }
+fn-terrain = { path = "../fn-terrain" }
+fn-hull = { path = "../fn-hull" }
+glam = { workspace = true, features = ["serde"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+fn-pak = { path = "../fn-pak", optional = true }
+fn-uasset = { path = "../fn-uasset", optional = true }
+fn-mesh = { path = "../fn-mesh", optional = true }
+fn-ueio = { path = "../fn-ueio", optional = true }
+
+[[example]]
+name = "dump_table"
+required-features = ["paks"]
+
+[[test]]
+name = "core_data"
+required-features = ["paks"]

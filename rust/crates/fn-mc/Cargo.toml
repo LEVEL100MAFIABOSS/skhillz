@@ -1,0 +1,14 @@
+[package]
+name = "fn-mc"
+version.workspace = true
+edition.workspace = true
+description = "Minecraft bridge: the fn-mechanics building + pickaxe mechanics behind a JSON command API, compiled to WebAssembly for the Fabric mod"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+fn-mechanics = { path = "../fn-mechanics" }
+glam = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

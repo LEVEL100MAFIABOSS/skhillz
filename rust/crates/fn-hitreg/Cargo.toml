@@ -1,0 +1,35 @@
+[package]
+name = "fn-hitreg"
+version.workspace = true
+edition.workspace = true
+description = "Gun hit registration recovered from the 1.8 data: trace, spread, recoil, damage falloff, prop damage. Engine-free; weapon data from mechanics-data.json or (feature `paks`) a 1.8 install."
+
+[features]
+default = []
+# Read weapon definitions straight from a Fortnite 1.8 install (only needed to bake mechanics-data.json).
+paks = ["dep:fn-pak", "dep:fn-uasset", "dep:fn-ueio", "dep:fn-mesh"]
+
+[dependencies]
+fn-live = { path = "../fn-live" }
+fn-terrain = { path = "../fn-terrain" }
+glam = { workspace = true, features = ["serde"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+fn-weapons = { path = "../fn-weapons" }
+fn-combat = { path = "../fn-combat" }
+fn-movement = { path = "../fn-movement" }
+fn-pak = { path = "../fn-pak", optional = true }
+fn-uasset = { path = "../fn-uasset", optional = true }
+fn-ueio = { path = "../fn-ueio", optional = true }
+fn-mesh = { path = "../fn-mesh", optional = true }
+
+[[bin]]
+name = "hitreg-dump"
+required-features = ["paks"]
+
+[[bin]]
+name = "weapons-table"
+required-features = ["paks"]
+
+[lints.rust]
+unsafe_code = "forbid"

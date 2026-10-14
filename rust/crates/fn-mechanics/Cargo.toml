@@ -1,0 +1,34 @@
+[package]
+name = "fn-mechanics"
+version.workspace = true
+edition.workspace = true
+description = "Drop-in Fortnite 1.8 gameplay mechanics (movement, camera, building, editing, guns, pickaxe, weapons, storm, fall damage, loot, traps) for any Rust game"
+
+[features]
+default = []
+# Bake mechanics-data.json from a Fortnite 1.8 install (`cargo run -p fn-mechanics --features paks --bin fn-mechanics-bake -- <install> [out.json]`).
+paks = ["fn-building/paks", "fn-hitreg/paks", "fn-rules/paks", "dep:fn-pak"]
+
+[dependencies]
+glam = { workspace = true, features = ["serde"] }
+serde_json = { workspace = true }
+fn-live = { path = "../fn-live" }
+fn-hull = { path = "../fn-hull" }
+fn-terrain = { path = "../fn-terrain" }
+fn-movement = { path = "../fn-movement" }
+fn-camera = { path = "../fn-camera" }
+fn-combat = { path = "../fn-combat" }
+fn-weapons = { path = "../fn-weapons" }
+fn-building = { path = "../fn-building" }
+fn-hitreg = { path = "../fn-hitreg" }
+fn-rules = { path = "../fn-rules" }
+fn-net = { path = "../fn-net" }
+fn-pak = { path = "../fn-pak", optional = true }
+
+[[bin]]
+name = "fn-mechanics-bake"
+path = "src/bin/fn-mechanics-bake.rs"
+required-features = ["paks"]
+
+[lints.rust]
+unsafe_code = "forbid"
