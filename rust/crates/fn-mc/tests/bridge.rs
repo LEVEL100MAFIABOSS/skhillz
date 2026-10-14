@@ -5,12 +5,16 @@ use serde_json::{json, Value};
 
 fn call(e: &mut Engine, v: Value) -> Value { serde_json::from_str(&e.handle_json(&v.to_string())).unwrap() }
 
-fn player(e: &mut Engine, piece: Option<&str>, look: [f64; 3], place: bool, attack: bool) -> Value {
+fn player(e: &mut Engine, piece: Option<&str>, look: [f64; 3], place: bool, attack: bool) -> Value { player_at(e, [0., 0.], piece, look, place, attack) }
+
+/// The player standing at `base` + (0.5, 0, 0.5) on the flat ground y = 0.
+fn player_at(e: &mut Engine, base: [f64; 2], piece: Option<&str>, look: [f64; 3], place: bool, attack: bool) -> Value {
+    let (px, pz) = (base[0] + 0.5, base[1] + 0.5);
     // what Minecraft's block raycast reports: the ground plane y = 0 within 8 m
     let n = (look[0] * look[0] + look[1] * look[1] + look[2] * look[2]).sqrt();
     let t = if look[1] < 0. { 1.62 / (-look[1] / n) } else { f64::INFINITY };
-    let (hit, normal) = if t <= 8. { (json!([0.5 + look[0] / n * t, 0.0, 0.5 + look[2] / n * t]), json!([0.0, 1.0, 0.0])) } else { (Value::Null, Value::Null) };
-    call(e, json!({"cmd":"player","id":"steve","eye":[0.5,1.62,0.5],"look":look,"feet":[0.5,0.0,0.5],"piece":piece,"material":"wood",
+    let (hit, normal) = if t <= 8. { (json!([px + look[0] / n * t, 0.0, pz + look[2] / n * t]), json!([0.0, 1.0, 0.0])) } else { (Value::Null, Value::Null) };
+    call(e, json!({"cmd":"player","id":"steve","eye":[px,1.62,pz],"look":look,"feet":[px,0.0,pz],"piece":piece,"material":"wood",
         "place":place,"rotate":false,"attack":attack,"pickaxe":true,"dt":0.05,"hit":hit,"hit_normal":normal}))
 }
 
@@ -19,23 +23,30 @@ fn engine() -> Engine { let mut e = Engine::default(); call(&mut e, json!({"cmd"
 /// Where the unit block's corners land under a display transformation (Minecraft: T * L * S * R, R = identity).
 fn display_aabb(b: &Value) -> ([f64; 3], [f64; 3]) {
     let f = |k: &str, i: usize| b[k][i].as_f64().unwrap();
-    let pos = Vec3::new(f("pos", 0) as f32, f("pos", 1) as f32, f("pos", 2) as f32);
+    // the entity position is a double in Minecraft; the transformation is relative to it (floats)
+    let pos = [f("pos", 0), f("pos", 1), f("pos", 2)];
     let t = Vec3::new(f("translation", 0) as f32, f("translation", 1) as f32, f("translation", 2) as f32);
     let q = Quat::from_xyzw(f("rot", 0) as f32, f("rot", 1) as f32, f("rot", 2) as f32, f("rot", 3) as f32);
     let s = Vec3::new(f("scale", 0) as f32, f("scale", 1) as f32, f("scale", 2) as f32);
     let (mut lo, mut hi) = (Vec3::splat(f32::INFINITY), Vec3::splat(f32::NEG_INFINITY));
-    for x in [0., 1.] { for y in [0., 1.] { for z in [0., 1.] { let v = pos + t + q * (s * Vec3::new(x, y, z)); lo = lo.min(v); hi = hi.max(v); } } }
-    ([lo.x as f64, lo.y as f64, lo.z as f64], [hi.x as f64, hi.y as f64, hi.z as f64])
+    for x in [0., 1.] { for y in [0., 1.] { for z in [0., 1.] { let v = t + q * (s * Vec3::new(x, y, z)); lo = lo.min(v); hi = hi.max(v); } } }
+    ([pos[0] + lo.x as f64, pos[1] + lo.y as f64, pos[2] + lo.z as f64], [pos[0] + hi.x as f64, pos[1] + hi.y as f64, pos[2] + hi.z as f64])
 }
 
 #[test]
-fn build_a_wall_in_front_and_pickaxe_it_down() {
+fn build_a_wall_in_front_and_pickaxe_it_down() { wall_and_pickaxe_at([0., 0.]); }
+
+/// Where a game test once ran: f32 world coordinates there are over a metre apart, so this only passes with the engine's local origin.
+#[test]
+fn far_from_the_world_origin_works_the_same() { wall_and_pickaxe_at([-12_696_762., -12_464_777.]); }
+
+fn wall_and_pickaxe_at(base: [f64; 2]) {
     let mut e = engine();
     // looking east (+X), slightly down
     let look = [0.97, -0.24, 0.0];
-    let r = player(&mut e, Some("wall"), look, false, false);
+    let r = player_at(&mut e, base, Some("wall"), look, false, false);
     assert_eq!(r["preview"][0]["ok"], true, "{r}");
-    let r = player(&mut e, Some("wall"), look, true, false);
+    let r = player_at(&mut e, base, Some("wall"), look, true, false);
     let spawn = &r["spawn"][0];
     assert_eq!(spawn["kind"], "wall", "{r}");
     // the wall stands on the ground (y 0..3.84), 5.12 wide, 20 cm thick, in front of the player
@@ -43,18 +54,17 @@ fn build_a_wall_in_front_and_pickaxe_it_down() {
     let size = [a[3] - a[0], a[4] - a[1], a[5] - a[2]];
     assert!((a[1] - 0.).abs() < 1e-3 && (size[1] - 3.84).abs() < 1e-3, "{a:?}");
     assert!(((size[0] - 0.2).abs() < 1e-3 && (size[2] - 5.12).abs() < 1e-3) || ((size[2] - 0.2).abs() < 1e-3 && (size[0] - 5.12).abs() < 1e-3), "{a:?}");
-    assert!(a[0] > 0.5, "the wall is east of the player: {a:?}");
+    assert!(a[0] > base[0] + 0.5, "the wall is east of the player: {a:?}");
     // the display box covers the same volume as the collision box
     let (lo, hi) = display_aabb(&spawn["boxes"][0]);
     for i in 0..3 { assert!((lo[i] - a[i]).abs() < 1e-3 && (hi[i] - a[i + 3]).abs() < 1e-3, "display {lo:?} {hi:?} vs {a:?}"); }
     // let it finish building, then swing at it
     for _ in 0..100 { call(&mut e, json!({"cmd":"tick","dt":0.05})); }
-    let dir = [(a[0] + a[3]) * 0.5 - 0.5, 1.62 - 1.62, (a[2] + a[5]) * 0.5 - 0.5];
-    let n = (dir[0] * dir[0] + dir[2] * dir[2]).sqrt();
-    let look_at = [dir[0] / n, 0.0, dir[2] / n];
+    // walk up to 1.5 m in front of the wall's face (west of it), level with its middle, and look east at it
+    let stand = [a[0] - 1.5 - 0.5, (a[2] + a[5]) * 0.5 - 0.5];
     let (mut hits, mut destroyed) = (0, false);
     for _ in 0..400 {
-        let r = player(&mut e, None, look_at, false, true);
+        let r = player_at(&mut e, stand, None, [1.0, 0.0, 0.0], false, true);
         for h in r["hits"].as_array().unwrap() { hits += 1; if h["destroyed"] == true { destroyed = true; } }
         if destroyed { assert_eq!(r["remove"].as_array().unwrap().len(), 1, "{r}"); break; }
         call(&mut e, json!({"cmd":"tick","dt":0.05}));
@@ -118,4 +128,17 @@ fn export_import_round_trip() {
     assert_eq!(r["spawn"].as_array().unwrap().len(), 1, "{r}");
     let snap = call(&mut f, json!({"cmd":"snapshot"}));
     assert_eq!(snap["spawn"].as_array().unwrap().len(), 1);
+}
+
+#[test]
+fn saved_pieces_keep_their_position_far_away() {
+    let base = [-12_696_762., -12_464_777.];
+    let mut e = engine();
+    let r = player_at(&mut e, base, Some("wall"), [0.97, -0.24, 0.0], true, false);
+    let before = r["spawn"][0]["aabbs"][0].clone();
+    let saved = call(&mut e, json!({"cmd":"export"}))["export"].clone();
+    let mut f = engine();
+    let r = call(&mut f, json!({"cmd":"import","pieces":saved}));
+    let after = r["spawn"][0]["aabbs"][0].clone();
+    for i in 0..6 { assert!((before[i].as_f64().unwrap() - after[i].as_f64().unwrap()).abs() < 1e-3, "{before} vs {after}"); }
 }

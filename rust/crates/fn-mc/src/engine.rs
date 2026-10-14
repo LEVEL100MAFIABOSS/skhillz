@@ -2,7 +2,7 @@
 //! Driven by [`Engine::handle`] with JSON commands (see `Cmd`); every command answers with the world changes since the previous answer.
 use crate::host::HostBlocks;
 use crate::shapes::{collision_aabbs, render_boxes, render_boxes_at, RenderBox};
-use crate::space::{mc_dir_to_ue, mc_to_ue};
+use crate::space::{abs_to_ue, mc_dir_to_ue, mc_to_ue, origin_near, set_origin, ue_to_abs};
 use fn_mechanics::building::damage::{self, BuildingDamage, Hit};
 use fn_mechanics::building::grid::Rot;
 use fn_mechanics::building::pieces::{ConnectivityCube, Material, PieceCatalog, PieceKind};
@@ -47,7 +47,8 @@ pub enum Cmd {
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct SavedPiece { pub kind: String, pub material: String, pub location: [f32; 3], pub yaw: f32, pub health: f32 }
+/// `location`: absolute UE centimetres (f64, so it survives any distance from the world origin).
+pub struct SavedPiece { pub kind: String, pub material: String, pub location: [f64; 3], pub yaw: f32, pub health: f32 }
 
 #[derive(Serialize, Debug, Clone)]
 pub struct Spawn { pub id: u32, pub kind: &'static str, pub material: &'static str, pub boxes: Vec<RenderBox>, pub aabbs: Vec<[f64; 6]> }
@@ -86,6 +87,8 @@ pub struct Engine {
     players: HashMap<String, Player>,
     events_cursor: u64,
     destroyed_cursor: u64,
+    /// Local origin of this engine's coordinates (MC metres), chosen near the first position it sees; see `crate::space`.
+    origin: Option<[f64; 3]>,
 }
 
 pub fn kind_name(k: PieceKind) -> &'static str { match k { PieceKind::Wall => "wall", PieceKind::Floor => "floor", PieceKind::Stairs => "stairs", PieceKind::Roof => "roof" } }
@@ -99,7 +102,7 @@ impl Default for Engine { fn default() -> Self { Engine::new(placeholder::catalo
 
 impl Engine {
     pub fn new(catalog: PieceCatalog, grid_y: f64) -> Engine {
-        let mut e = Engine { catalog, world: BuildingWorld::new(), damage: BuildingDamage::new(), env: PlacementEnv::default(), players: HashMap::new(), events_cursor: 0, destroyed_cursor: 0 };
+        let mut e = Engine { catalog, world: BuildingWorld::new(), damage: BuildingDamage::new(), env: PlacementEnv::default(), players: HashMap::new(), events_cursor: 0, destroyed_cursor: 0, origin: None };
         e.env.host = HostWorld(Some(Arc::new(HostBlocks)));
         e.set_grid_y(grid_y);
         e
@@ -115,8 +118,14 @@ impl Engine {
         serde_json::to_string(&out).unwrap_or_else(|e| format!("{{\"error\":\"{e}\"}}"))
     }
 
+    fn set_local_origin(&mut self, o: [f64; 3]) { self.origin = Some(o); set_origin(o); }
+
     pub fn handle(&mut self, cmd: Cmd) -> Out {
         let mut out = Out::default();
+        set_origin(self.origin.unwrap_or([0.; 3]));
+        if self.origin.is_none() {
+            if let Cmd::Player { feet, .. } = &cmd { let o = origin_near(*feet); self.set_local_origin(o); }
+        }
         match cmd {
             Cmd::Init { data, grid_y } => {
                 let catalog = match data {
@@ -137,13 +146,16 @@ impl Engine {
             Cmd::RemovePlayer { id } => { if self.players.remove(&id).is_some() { out.preview_clear.push(id); } }
             Cmd::Tick { dt } => self.tick(dt),
             Cmd::Export => {
-                out.export = Some(self.world.iter().map(|p| SavedPiece { kind: kind_name(p.kind).into(), material: material_name(p.material).into(), location: p.location.to_array(), yaw: p.yaw_deg, health: p.health }).collect());
+                out.export = Some(self.world.iter().map(|p| SavedPiece { kind: kind_name(p.kind).into(), material: material_name(p.material).into(), location: ue_to_abs(p.location), yaw: p.yaw_deg, health: p.health }).collect());
             }
             Cmd::Import { pieces } => {
+                if self.origin.is_none() {
+                    if let Some(s) = pieces.first() { self.set_local_origin(origin_near([s.location[0] / 100., 0., s.location[1] / 100.])); }
+                }
                 for s in pieces {
                     let (Some(k), Some(m)) = (parse_kind(&s.kind), parse_material(&s.material)) else { continue };
                     let Some(def) = self.catalog.def(k, m) else { continue };
-                    let id = placement::spawn_piece(&mut self.world, def, Vec3::from(s.location), s.yaw, false, self.env.grid_origin);
+                    let id = placement::spawn_piece(&mut self.world, def, abs_to_ue(s.location), s.yaw, false, self.env.grid_origin);
                     self.world.set_health(id, s.health.min(def.max_health).max(1.));
                 }
                 // a restored piece is fully built

@@ -49,11 +49,14 @@ public class FnMcGameTest {
 
 		// finish building, then hold attack with a pickaxe at the wall
 		for (int i = 0; i < 200; i++) m.tick();
+		// walk up to 1.5 m from the wall's face, level with its middle, and look straight at it
 		Vec3 centre = wall.getCenter();
-		Vec3 aim = new Vec3(centre.x - eye.x, 0, centre.z - eye.z).normalize();
+		Vec3 standFeet = new Vec3(wall.minX - 1.5, feet.y, centre.z);
+		Vec3 standEye = standFeet.add(0, 1.62, 0);
+		Vec3 aim = new Vec3(1, 0, 0);
 		int ticks = 0;
 		while (m.pieceCount() > 0 && ticks++ < 400) {
-			m.playerInput("gametest", viewer, eye, aim, feet, -1, 0, false, false, true, true);
+			m.playerInput("gametest", viewer, standEye, aim, standFeet, -1, 0, false, false, true, true);
 			m.tick();
 		}
 		helper.assertTrue(m.pieceCount() == 0, "the wall survived " + ticks + " ticks of pickaxe swings");
