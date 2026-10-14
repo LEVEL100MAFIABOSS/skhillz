@@ -67,6 +67,17 @@ jobs:
           done
           javap -p -c -cp "$JAR" net.minecraft.world.entity.Entity | grep -n "collide\|getEntityCollisions" > /tmp/ci/api/_entity_collide.txt 2>&1 || true
 
+      - name: Publish the jar (Releases page + ci-logs)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          JAR=$(ls build/libs/*.jar | grep -v -- '-sources' | head -1)
+          mkdir -p /tmp/ci/jar && cp "$JAR" /tmp/ci/jar/
+          gh release delete latest --yes --cleanup-tag 2>/dev/null || true
+          gh release create latest "$JAR" --title "FN Mechanics (latest build)" --target "$GITHUB_SHA" \
+            --notes "Built from ${GITHUB_SHA::7}. Put this jar plus Fabric API 0.162.0+26.3 in the mods folder of the server and of every player (Fabric Loader 0.19.5+, Minecraft 26.3, Java 25)."
+
       - name: Publish logs to the ci-logs branch
         if: always()
         run: |
