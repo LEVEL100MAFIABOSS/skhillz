@@ -54,15 +54,15 @@ jobs:
         if: always()
         run: |
           mkdir -p /tmp/ci/api
-          JAR=$(find ~/.gradle/caches -name "*.jar" \( -path "*minecraft*merged*" -o -path "*minecraft-common*" -o -name "minecraft-*.jar" \) 2>/dev/null | xargs -r ls -S | head -1)
-          echo "minecraft jar: $JAR" > /tmp/ci/api/_jar.txt
-          find ~/.gradle/caches -name "*.jar" -path "*minecraft*" 2>/dev/null | head -40 >> /tmp/ci/api/_jar.txt
+          L=~/.gradle/caches/fabric-loom/${{ '26.3' }}
+          JAR="$L/minecraft-common.jar:$L/minecraft-client-only.jar"
+          echo "classpath: $JAR" > /tmp/ci/api/_jar.txt
           for c in net.minecraft.world.level.block.Blocks net.minecraft.world.entity.Entity net.minecraft.world.entity.Display 'net.minecraft.world.entity.Display$BlockDisplay' \
                    net.minecraft.world.level.ClipContext net.minecraft.world.level.Level net.minecraft.server.level.ServerLevel net.minecraft.sounds.SoundEvents \
                    net.minecraft.world.entity.EntitySpawnReason net.minecraft.world.entity.EntityTypes net.minecraft.client.KeyMapping net.minecraft.client.Options \
                    net.minecraft.tags.ItemTags net.minecraft.world.level.storage.LevelResource net.minecraft.world.phys.AABB net.minecraft.server.level.ServerPlayer \
                    net.minecraft.world.entity.player.Player net.minecraft.world.level.CollisionGetter net.minecraft.world.level.EntityGetter net.minecraft.core.Direction \
-                   net.minecraft.world.phys.BlockHitResult net.minecraft.resources.ResourceKey net.minecraft.commands.CommandSourceStack com.mojang.math.Transformation; do
+                   net.minecraft.world.phys.BlockHitResult net.minecraft.resources.ResourceKey net.minecraft.commands.CommandSourceStack com.mojang.math.Transformation net.minecraft.client.Minecraft; do
             javap -p -cp "$JAR" "$c" > "/tmp/ci/api/$c.txt" 2>&1 || true
           done
           javap -p -c -cp "$JAR" net.minecraft.world.entity.Entity | grep -n "collide\|getEntityCollisions" > /tmp/ci/api/_entity_collide.txt 2>&1 || true

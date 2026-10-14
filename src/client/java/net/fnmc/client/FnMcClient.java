@@ -70,7 +70,7 @@ public final class FnMcClient implements ClientModInitializer {
 		while (roof.consumeClick()) piece = 3;
 		while (exit.consumeClick()) piece = -1;
 		boolean place = false, turn = false;
-		if (piece >= 0 && client.screen == null) {
+		if (piece >= 0) {
 			// take the clicks before vanilla handles them this tick
 			while (client.options.keyAttack.consumeClick()) place = true;
 			while (client.options.keyUse.consumeClick()) material = (material + 1) % 3;
@@ -78,7 +78,7 @@ public final class FnMcClient implements ClientModInitializer {
 		} else {
 			while (rotate.consumeClick()) { }
 		}
-		boolean attack = client.screen == null && client.options.keyAttack.isDown();
+		boolean attack = client.options.keyAttack.isDown(); // menus release every key, so this is false while one is open
 		if (ClientPlayNetworking.canSend(InputPayload.TYPE)) {
 			ClientPlayNetworking.send(new InputPayload(piece, material, place, turn, attack));
 		}
