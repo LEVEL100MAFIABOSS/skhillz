@@ -1,0 +1,34 @@
+Compiled from "Transformation.java"
+public final class com.mojang.math.Transformation {
+  private static final org.joml.Vector3fc ZERO_TRANSLATION;
+  private static final org.joml.Vector3fc UNIT_SCALE;
+  private static final org.joml.Quaternionfc ZERO_ROTATION;
+  private final org.joml.Matrix4fc matrix;
+  public static final com.mojang.serialization.Codec<com.mojang.math.Transformation> CODEC;
+  public static final com.mojang.serialization.Codec<com.mojang.math.Transformation> EXTENDED_CODEC;
+  private boolean decomposed;
+  private org.joml.Vector3fc translation;
+  private org.joml.Quaternionfc leftRotation;
+  private org.joml.Vector3fc scale;
+  private org.joml.Quaternionfc rightRotation;
+  public static final com.mojang.math.Transformation IDENTITY;
+  public com.mojang.math.Transformation(org.joml.Matrix4fc);
+  public com.mojang.math.Transformation(org.joml.Vector3fc, org.joml.Quaternionfc, org.joml.Vector3fc, org.joml.Quaternionfc);
+  public com.mojang.math.Transformation compose(com.mojang.math.Transformation);
+  public com.mojang.math.Transformation inverse();
+  private void ensureDecomposed();
+  private static org.joml.Matrix4f compose(org.joml.Vector3fc, org.joml.Quaternionfc, org.joml.Vector3fc, org.joml.Quaternionfc);
+  public org.joml.Matrix4fc getMatrix();
+  public org.joml.Matrix4f getMatrixCopy();
+  public org.joml.Vector3fc translation();
+  public org.joml.Quaternionfc leftRotation();
+  public org.joml.Vector3fc scale();
+  public org.joml.Quaternionfc rightRotation();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public com.mojang.math.Transformation slerp(com.mojang.math.Transformation, float);
+  public static org.joml.Matrix4fc compose(org.joml.Matrix4fc, java.util.Optional<com.mojang.math.Transformation>);
+  private static com.mojang.math.Transformation lambda$static$1();
+  private static com.mojang.datafixers.kinds.App lambda$static$0(com.mojang.serialization.codecs.RecordCodecBuilder$Instance);
+  static {};
+}

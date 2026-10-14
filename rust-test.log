@@ -1,0 +1,773 @@
+[1m[92m    Updating[0m crates.io index
+[1m[92m Downloading[0m crates ...
+[1m[92m  Downloaded[0m crypto-common v0.1.7
+[1m[92m  Downloaded[0m inout v0.1.4
+[1m[92m  Downloaded[0m miniz_oxide v0.8.9
+[1m[92m  Downloaded[0m memchr v2.8.3
+[1m[92m  Downloaded[0m cfg-if v1.0.5
+[1m[92m  Downloaded[0m serde_derive v1.0.229
+[1m[92m  Downloaded[0m zmij v1.0.23
+[1m[92m  Downloaded[0m cpufeatures v0.2.17
+[1m[92m  Downloaded[0m aes v0.8.4
+[1m[92m  Downloaded[0m itoa v1.0.18
+[1m[92m  Downloaded[0m serde_json v1.0.151
+[1m[92m  Downloaded[0m serde v1.0.229
+[1m[92m  Downloaded[0m serde_core v1.0.229
+[1m[92m  Downloaded[0m quote v1.0.47
+[1m[92m  Downloaded[0m memmap2 v0.9.11
+[1m[92m  Downloaded[0m proc-macro2 v1.0.107
+[1m[92m  Downloaded[0m adler2 v2.0.1
+[1m[92m  Downloaded[0m cipher v0.4.4
+[1m[92m  Downloaded[0m typenum v1.20.1
+[1m[92m  Downloaded[0m unicode-ident v1.0.26
+[1m[92m  Downloaded[0m generic-array v0.14.7
+[1m[92m  Downloaded[0m ruzstd v0.8.3
+[1m[92m  Downloaded[0m version_check v0.9.5
+[1m[92m  Downloaded[0m syn v3.0.6
+[1m[92m  Downloaded[0m libc v0.2.190
+[1m[92m  Downloaded[0m glam v0.32.1
+[1m[92m   Compiling[0m serde_core v1.0.229
+[1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m fn-live v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-live)
+[1m[92m   Compiling[0m serde_json v1.0.151
+[1m[92m   Compiling[0m itoa v1.0.18
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m proc-macro2 v1.0.107
+[1m[92m   Compiling[0m glam v0.32.1
+[1m[92m   Compiling[0m unicode-ident v1.0.26
+[1m[92m   Compiling[0m quote v1.0.47
+[1m[92m   Compiling[0m syn v3.0.6
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m fn-weapons v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-weapons)
+[1m[92m   Compiling[0m version_check v0.9.5
+[1m[92m   Compiling[0m generic-array v0.14.7
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m serde_derive v1.0.229
+[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m miniz_oxide v0.8.9
+[1m[92m   Compiling[0m libc v0.2.190
+[1m[92m   Compiling[0m inout v0.1.4
+[1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m cipher v0.4.4
+[1m[92m   Compiling[0m cfg-if v1.0.5
+[1m[92m   Compiling[0m cpufeatures v0.2.17
+[1m[92m   Compiling[0m fn-testdata v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-testdata)
+[1m[92m   Compiling[0m aes v0.8.4
+[1m[92m   Compiling[0m memmap2 v0.9.11
+[1m[92m   Compiling[0m ruzstd v0.8.3
+[1m[92m   Compiling[0m fn-ueio v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-ueio)
+[1m[92m   Compiling[0m fn-terrain v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-terrain)
+[1m[92m   Compiling[0m fn-hull v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-hull)
+[1m[92m   Compiling[0m fn-movement v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-movement)
+[1m[92m   Compiling[0m fn-combat v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-combat)
+[1m[92m   Compiling[0m fn-hitreg v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-hitreg)
+[1m[92m   Compiling[0m fn-rules v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-rules)
+[1m[92m   Compiling[0m fn-building v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-building)
+[1m[92m   Compiling[0m fn-camera v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-camera)
+[1m[33mwarning[0m[1m: unused variable: `center`[0m
+   [1m[94m--> [0mcrates/fn-camera/src/lib.rs:314:13
+    [1m[94m|[0m
+[1m[94m314[0m [1m[94m|[0m         let center = feet + Vec3::Y * half;
+    [1m[94m|[0m             [1m[33m^^^^^^[0m [1m[33mhelp: if this is intentional, prefix it with an underscore: `_center`[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1mnote[0m: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+[1m[33mwarning[0m: `fn-camera` (lib) generated 1 warning (run `cargo fix --lib -p fn-camera` to apply 1 suggestion)
+[1m[92m   Compiling[0m fn-net v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-net)
+[1m[92m   Compiling[0m fn-mechanics v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-mechanics)
+[1m[92m   Compiling[0m fn-pak v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-pak)
+[1m[92m   Compiling[0m fn-uasset v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-uasset)
+[1m[92m   Compiling[0m fn-mesh v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-mesh)
+[1m[92m   Compiling[0m fn-mc v0.1.0 (/home/runner/work/skhillz/skhillz/rust/crates/fn-mc)
+[1m[33mwarning[0m[1m: unused variable: `fraction`[0m
+   [1m[94m--> [0mcrates/fn-rules/src/storm_zones.rs:278:81
+    [1m[94m|[0m
+[1m[94m278[0m [1m[94m|[0m [1m[94m...[0mer_map(|e| if let ZoneEvent::Damage { fraction } = e.1 { Some(e.0) } else { None }).collect();
+    [1m[94m|[0m                                          [1m[33m^^^^^^^^[0m [1m[33mhelp: try ignoring the field: `fraction: _`[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1mnote[0m: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+[1m[33mwarning[0m: `fn-rules` (lib test) generated 1 warning (run `cargo fix --lib -p fn-rules --tests` to apply 1 suggestion)
+[1m[33mwarning[0m: `fn-camera` (lib test) generated 1 warning (1 duplicate)
+[1m[92m    Finished[0m `test` profile [optimized + debuginfo] target(s) in 44.75s
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_building-9d8e80113d62dcf1)
+
+running 46 tests
+test damage::tests::health_table_and_keys ... ok
+test damage::tests::eight_pickaxe_hits_break_a_wood_wall_and_its_floor_follows ... ok
+test damage::tests::traces_hit_each_shape ... ok
+test door::tests::a_close_blocked_by_the_pawn_is_refused_after_its_sound_and_leaves_the_collision_off ... ok
+test door::tests::a_door_that_ends_its_close_on_the_pawn_bounces_open_without_an_instigator ... ok
+test damage::tests::chain_collapse_timeline_image ... ok
+test door::tests::a_new_door_is_closed_with_collision_and_says_open ... ok
+test door::tests::a_pawn_facing_the_other_way_flips_the_delta_and_the_flip_is_kept ... ok
+test door::tests::closing_plays_the_close_sound_and_turns_back_in_0_4_s ... ok
+test door::tests::a_mirrored_wall_flips_after_the_instigator_test_every_open ... ok
+test door::tests::fixed_turn_matches_ue416 ... ok
+test door::tests::door_def_reads_the_class_defaults ... ok
+test door::tests::open_swings_90_degrees_in_0_4_s_away_from_the_pawn_then_collides_again ... ok
+test edit::pattern::tests::mirror_swaps_columns ... ok
+test edit::pattern::tests::wall_mirror_becomes_rotation_two ... ok
+test edit::pattern::tests::either_matches_anything ... ok
+test edit::pattern::tests::rotate_is_the_exe_cycle ... ok
+test grid::tests::grid_snap_is_floor_half_up ... ok
+test placement::tests::poi_pieces_anchor_connected_pieces_and_own_their_slot ... ok
+test placement::tests::preview_rotation_is_remembered_per_piece_and_walls_only_flip ... ok
+test placement::tests::rotate_four_times_is_identity_and_mirror_twice_is_identity ... ok
+test grid::tests::wall_floor_ramp_on_the_same_cell ... ok
+test structural::tests::chain_collapse_with_the_exact_test ... ok
+test placement::tests::wall_on_a_floor_edge_connects_floor_beside_floor_connects_diagonal_does_not ... ok
+test structural::terrain_tests::the_world_overlap_check_touches_the_landscape_where_it_crosses_the_box ... ok
+test structural::tests::delay_is_the_exe_formula ... ok
+test structural::tests::connectivity_of_known_pairs ... ok
+test structural::tests::edit_that_cuts_the_piece_itself_off_collapses_it_after_025s ... ok
+test structural::tests::dissolve_renames_the_largest_group_to_the_old_id ... ok
+test structural::tests::groups_register_merge_and_dissolve ... ok
+test structural::tests::edit_that_removes_the_only_connection_collapses_on_time ... ok
+test structural::tests::timer_heap_matches_ue_416 ... ok
+test structural::tests::world_overlap_check_rules ... ok
+test structural::tests::placement_schedules_the_new_pieces_neighbours ... ok
+test visual::tests::damage_bounce_direction_rules ... ok
+test visual::tests::damage_bounces_shows_the_blueprint_and_breaks_down ... ok
+test visual::tests::death_plays_the_destruction_then_hides ... ok
+test visual::tests::finterp_matches_the_engine ... ok
+test visual::tests::neighbour_bounce_propagates ... ok
+test visual::tests::one_shot_destruction_has_no_crit_scale ... ok
+test structural::tests::tower_collapses_only_when_the_last_base_wall_breaks ... ok
+test visual::tests::class_and_level_helpers ... ok
+test visual::tests::placement_then_building_to_completion ... ok
+test visual::tests::target_is_ceil_of_the_health_lerp ... ok
+test visual::tests::sphere_overlap_of_hulls ... ok
+test world::tests::build_up_and_damage ... ok
+
+test result: ok. 46 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_camera-a25df93d911285ed)
+
+running 31 tests
+test tests::base_constants_match_extracted_asset_report ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test follow_tests::frame_follow_lags_like_the_real_client_at_any_tick_rate ... ok
+test terrain_tests::the_ground_sweep_stops_on_the_landscape ... ok
+test tests::cam_state_lerp_endpoints ... ok
+test tests::compose_never_puts_the_eye_under_the_ground_when_pitch_changes_between_ticks ... ok
+test tests::compose_of_the_ticked_state_is_exactly_the_update_view ... ok
+test tests::crouch_offset_interpolates_at_serialized_speed_then_settles ... ok
+test tests::crouch_lowers_eye_smoothly_and_standing_returns ... ok
+test tests::forward_origin_lag_follows_serialized_speed_and_lateral_is_instant ... ok
+test tests::crouch_transition_reaches_same_value_at_different_frame_rates ... ok
+test tests::feeler_rays_rotate_like_rotate_angle_axis ... ok
+test tests::frustum_is_horizontal_80_at_16x9_and_keeps_vertical_fov_elsewhere ... ok
+test tests::interp_to_never_overshoots_and_instant_sentinel_snaps ... ok
+test tests::large_teleport_snaps_instead_of_gliding ... ok
+test tests::looking_up_pulls_camera_in_and_hard_clip_sits_on_probe_sphere ... ok
+test tests::melee_constants_match_extracted_asset_report ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test tests::pawn_hide_is_strict ... ok
+test tests::offsets_rotate_with_yaw ... ok
+test tests::pawn_hides_only_when_boom_is_almost_fully_blocked ... ok
+test tests::penetration_blends_out_gradually_but_blocks_instantly ... ok
+test tests::pickaxe_selects_melee_camera_and_capsule_matches_report ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test tests::pitch_changes_boom_per_camera_space_samples ... ok
+test tests::pitch_is_clamped_to_view_limits ... ok
+test tests::sample_offset_is_piecewise_linear_and_clamped ... ok
+test tests::standing_level_camera_is_over_right_shoulder_280cm_behind ... ok
+test tests::steady_walking_keeps_a_constant_follow_distance ... ok
+test tests::wall_blocks_camera_and_does_not_penetrate ... ok
+test tests::world_weight_does_not_scale_the_hit_fraction ... ok
+test tests::safe_location_is_the_aim_line_point_inside_the_live_capsule ... ok
+test tests::soft_feelers_blend_in_over_the_blend_in_time_and_the_main_feeler_snaps ... ok
+test tests::camera_never_goes_below_ground_for_any_view_angle ... ok
+
+test result: ok. 28 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_combat-f1e2bad3d7135103)
+
+running 52 tests
+test harvest_fx::tests::a_normal_hit_generates_one_weak_spot_on_the_surface_facing_the_player ... ok
+test harvest_fx::tests::a_hull_prop_gets_its_spot_on_the_hull_surface ... ok
+test harvest_fx::tests::a_tree_breaks_after_the_right_mix_of_ordinary_and_weak_point_hits ... ok
+test harvest_fx::tests::data_files_agree ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test harvest_fx::tests::crack_level_rises_with_the_hit_count_and_clamps_at_nine ... ok
+test harvest_fx::tests::hitting_the_weak_point_is_a_100_damage_critical_and_relocates_it ... ok
+test harvest_fx::tests::damage_numbers_use_the_building_crit_colour_and_age_out ... ok
+test harvest_fx::tests::placement_is_deterministic_and_avoids_the_previous_spot ... ok
+test harvest_fx::tests::focus_follows_the_crosshair_and_ignores_dead_props ... ok
+test harvest_fx::tests::the_damageable_sweep_follows_the_camera_pitch ... ok
+test harvest_fx::tests::the_numbers_are_the_data_and_the_specified_damage ... ok
+test harvest_fx::tests::the_weak_spot_needs_the_pawn_within_4_m_and_the_camera_line_within_30_cm ... ok
+test harvest_fx::tests::update_keeps_the_states_of_live_props_only_like_the_live_id_list ... ok
+test mats::tests::add_caps_at_the_stack_size_and_spend_is_all_or_nothing ... ok
+test reticle::tests::animation_keys_match_the_decoded_movie_scenes ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test reticle::tests::consecutive_hits_on_one_object_aggregate_and_hide_three_seconds_after_the_last ... ok
+test harvest_fx::tests::without_a_camera_ray_there_are_only_ordinary_hits ... ok
+test reticle::tests::a_different_object_resets_the_aggregate ... ok
+test reticle::tests::animated_parameters_at_rest_and_at_key_times ... ok
+test reticle::tests::popup_constants_match_the_1_8_widgets ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test reticle::tests::pack_counters_count_up_linearly_over_half_a_second ... ok
+test reticle::tests::cubic_curves_are_smoothstep_with_zero_tangents_and_use_the_arrive_tangent ... ok
+test reticle::tests::destroying_hit_waits_for_the_popup_then_plays_the_outro_without_a_timer ... ok
+test reticle::tests::popup_sits_left_of_centre_and_300_units_above_the_bottom ... ok
+test reticle::tests::reticle_constants_match_the_1_8_data ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test reticle::tests::reticle_is_centred_and_texture_sized_at_every_aspect ... ok
+test reticle::tests::pulse_restarts_per_hit_and_lasts_035_seconds ... ok
+test reticle::tests::resource_counts_clamp_to_max_stack_and_dim_at_the_cap ... ok
+test reticle::tests::reticle_colour_white_until_the_aim_ray_finds_a_prop_within_pickaxe_reach ... ok
+test reticle::tests::transforms_compose_scale_about_pivot_then_translation ... ok
+test tests::a_low_real_prop_is_hit_by_the_knee_sweep_and_a_tall_one_by_the_chest_sweep ... ok
+test reticle::tests::weakpoint_colour_is_cyan ... ok
+test reticle::tests::world_strikes_emit_hud_events_with_stable_object_ids ... ok
+test tests::blocked_tags_map_to_bounce_sections ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test tests::held_input_alternates_source_sections ... ok
+test tests::a_real_prop_takes_its_own_hit_points_yields_its_own_resource_and_never_regrows ... ok
+test tests::blocked_hit_branches_to_matching_bounce_then_ends ... ok
+test tests::decision_window_takes_a_press_inside_it_or_a_hold_at_its_end ... ok
+test tests::notify_constants_match_recovered_montage ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test tests::pickaxe_numbers_are_the_recovered_1_8_values ... ok
+test tests::held_input_restarts_swing_after_bounce ... ok
+test tests::interact_build_is_blocked_while_the_combo_ability_is_active ... ok
+test tests::prop_meshes_are_finite_and_within_their_colliders_height ... ok
+test tests::stationary_crouch_keeps_lower_body_pose ... ok
+test tests::recovery_sections_never_trigger_ability ... ok
+test tests::released_input_recovers_to_idle ... ok
+test tests::second_swing_uses_its_own_recovery ... ok
+test tests::trace_hits_prop_in_reach_and_misses_otherwise ... ok
+test tests::strike_damages_awards_and_destroys_then_respawns ... ok
+test tests::the_hit_trace_follows_the_hull_not_the_cylinder ... ok
+test tests::trace_returns_nearest_prop ... ok
+test tests::trigger_ability_fires_once_per_swing_at_serialized_time ... ok
+
+test result: ok. 46 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_hitreg-4b128632cf75b6e3)
+
+running 31 tests
+test explosive::tests::explosion_hits_the_instigator_flat_110_inside_512_and_nothing_outside ... ok
+test explosive::tests::rocket_flies_straight_at_2000_and_explodes_on_the_ground_offset_by_the_impact_offset ... ok
+test shoot::pawn_tests::capsule_gate_and_ray_capsule_geometry ... ok
+test explosive::tests::rocket_fuse_is_15_seconds ... ok
+test explosive::tests::grenade_bounces_loses_energy_and_explodes_on_the_fuse ... ok
+test shoot::pawn_tests::placed_physics_bodies_use_the_local_z_axis ... ok
+test shoot::pawn_tests::shield_goes_first_overflow_into_health_and_kills ... ok
+test surface::tests::precedence_matches_the_exe ... ok
+test shoot::pawn_tests::damage_zone_lookup_uses_active_bone_lists ... ok
+test shoot::pawn_tests::resistance_vulnerability_and_shield_order_match_the_exec_calc ... ok
+test tests::a_shot_hits_the_landscape_not_the_plate ... ok
+test tests::ads_additional_cooldown_replaces_the_camera_weight_while_targeting ... ok
+test shoot::pawn_tests::shooter_friends_and_dead_pawns_are_ignored_and_nearest_blocks ... ok
+test tests::ar_held_fire_bloom_sequence_matches_the_decoded_formula ... ok
+test tests::bullets_hit_the_complex_triangles_and_pass_the_opening_the_simple_box_covers ... ok
+test tests::ar_hip_shot_uses_one_cone_draw_and_ads_at_rest_is_perfect ... ok
+test tests::bullets_leave_the_camera_unless_the_muzzle_is_blocked_at_close_range ... ok
+test tests::damage_follows_the_five_key_falloff_curve ... ok
+test tests::falloff_damage_is_applied_to_props_by_range ... ok
+test tests::fire_rate_burst_and_trace_distance ... ok
+test tests::headshot_uses_the_critical_zone_column ... ok
+test tests::heat_per_shot_is_curve_times_spread_and_clamped_to_the_curve_range ... ok
+test tests::perfect_aim_rules ... ok
+test tests::rich_curve_add_key_and_eval_match_ue ... ok
+test tests::random_stream_is_ue_frandomstream ... ok
+test tests::shotgun_fires_ten_pellets_first_exact_rest_inside_the_cone ... ok
+test tests::smoothed_factors_start_at_zero_and_ease_in_at_the_cool_rate ... ok
+test tests::spread_cooling_waits_for_the_recoil_recovery_delay ... ok
+test tests::stance_multipliers_combine_as_the_tick_does ... ok
+test tests::vrand_cone_polar_angle_is_the_wrapped_sphere_angle ... ok
+test tests::vrand_cone_density_follows_the_exe_not_an_area_uniform_disc ... ok
+
+test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_hull-03c56b9e8c13fbc6)
+
+running 11 tests
+test tests::a_cube_has_12_triangles_and_the_exact_distance_field ... ok
+test tests::coplanar_and_degenerate_inputs_are_none_not_a_panic ... ok
+test tests::a_sphere_sweep_stops_at_the_analytic_contact_and_clears_when_offset ... ok
+test tests::closest_picks_the_face_that_opposes_the_sweep_at_a_rim ... ok
+test tests::rays_enter_at_the_analytic_point_and_miss_or_start_inside_cleanly ... ok
+test tests::mapping_with_an_axis_swap_keeps_distances_when_flipped ... ok
+test tests::sdf_matches_a_brute_force_distance_to_the_vertices_and_faces ... ok
+test tests::sets_combine_pieces_and_have_a_bounding_sphere_that_contains_them ... ok
+test tests::trimesh_ray_finds_the_nearest_triangle_and_misses_the_opening ... ok
+test tests::every_input_point_is_inside_and_planes_point_outward ... ok
+test tests::the_nearest_point_of_a_vertical_segment_matches_a_brute_force_search_and_none_means_overlap ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_live-afb0f410b27754eb)
+
+running 4 tests
+test tests::embedded_shader_without_disk ... ok
+test tests::parses_flat_toml ... ok
+test tests::rejects_bad_lines ... ok
+test tests::unset_keys_fall_back_to_the_environment ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_mc-31dbd16d51ed906b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m tests/bridge.rs (target/debug/deps/bridge-5d2016244492ca36)
+
+running 7 tests
+test export_import_round_trip ... ok
+test every_piece_previews_and_the_display_matches_its_box ... ok
+test a_floor_on_a_wall_collapses_when_the_wall_goes ... ok
+test saved_pieces_keep_their_position_far_away ... ok
+test ramps_walk_with_minecraft_step_height_and_rise_384 ... ok
+test build_a_wall_in_front_and_pickaxe_it_down ... ok
+test far_from_the_world_origin_works_the_same ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_mechanics-3f93b9b4e5707641)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m tests/kit.rs (target/debug/deps/kit-476ed17756de4c5d)
+
+running 6 tests
+test placeholder_numbers_are_the_1_8_values ... ok
+test place_a_wall_and_pickaxe_it_down ... ok
+test a_thirty_metre_drop_hurts_per_the_athena_curve ... ok
+test standing_in_the_storm_ticks_damage ... ok
+test the_pawn_jogs_at_the_recovered_run_speed ... ok
+test data_file_round_trips ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_mesh-468b8126d016fc89)
+
+running 10 tests
+test gltf::tests::printf_g ... ok
+test gltf::tests::debug_colors ... ok
+test gltf::tests::bone_sort_is_depth_first ... ok
+test gltf_lods::tests::index_buffer_roundtrips_u16 ... ok
+test gltf_lods::tests::tangent_w_is_negated_ue_sign ... ok
+test gltf_lods::tests::validate_reports_broken_sections ... ok
+test gltf_lods::tests::multi_lod_document_is_consistent ... ok
+test tests::bounds_box ... ok
+test tests::packed_normal_decoding ... ok
+test gltf_lods::tests::indices_become_32_bit_above_65535_vertices ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_movement-b296a2184bf5778a)
+
+running 85 tests
+test controller::tests::facing_rate_is_frame_rate_independent ... ok
+test controller::tests::fall_time_left_matches_the_ballistic_formula ... ok
+test controller::hull_cache_tests::the_scene_hulls_follow_every_change_of_the_hull_list ... ok
+test controller::tests::clamp_to_box_stops_sticky_overshoot ... ok
+test controller::tests::idle_character_holds_heading_then_turns_in_place ... ok
+test controller::tests::moving_character_tracks_camera_across_wrap ... ok
+test controller::tests::shortest_angle_wraps ... ok
+test params::tests::constants_match_movement_full_json ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test controller::tests::turn_toward_takes_short_arc_and_never_overshoots ... ok
+test params::tests::exe_constructor_defaults_match_the_report ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test params::tests::gravity_is_the_recovered_project_setting ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+test params::tests::directional_curve_is_a_step_function ... ok
+test scene::hull_tests::a_floor_probe_lands_on_the_top_of_a_hull_and_misses_beside_it ... ok
+test controller::tests::mouse_scale_is_original_default ... ok
+test controller::tests::smoothing_is_frame_rate_independent ... ok
+test scene::hull_tests::a_sweep_stops_at_the_hull_and_a_clear_sweep_does_not ... ok
+test scene::hull_tests::the_capsule_gap_to_a_hull_box_is_the_analytic_one ... ok
+test skydive::tests::diving_raises_the_terminal_velocity ... ok
+test skydive::tests::passive_skydive_settles_at_its_terminal_velocity_and_lateral_cap ... ok
+test skydive::tests::the_glider_falls_at_500_and_lands_into_walking ... ok
+test tests::a_crouched_press_stands_up_first_and_jumps_on_the_next_tick ... ok
+test tests::a_crouched_athena_pawn_walks_off_a_ledge ... ok
+test tests::a_jump_can_land_on_the_rock_top_only_when_it_clears_it ... ok
+test tests::a_pawn_can_crouch_in_the_air_like_the_1_8_exe ... ok
+test tests::a_press_during_landing_recovery_and_a_press_just_before_touchdown ... ok
+test tests::a_press_in_the_air_is_ignored_in_every_phase ... ok
+test tests::a_sprint_jump_keeps_its_ground_speed_in_the_air ... ok
+test tests::a_fall_onto_the_landscape_lands_on_it ... ok
+test tests::acceleration_from_rest_is_max_acceleration_at_every_frame_rate ... ok
+test tests::air_control_boosts_low_speed_and_keeps_momentum ... ok
+test tests::an_idle_pawn_on_a_slope_rests_on_the_landscape_and_does_not_slide ... ok
+test tests::an_unwalkable_landscape_slope_slides_the_pawn_down_at_the_athena_safe_slide_speed ... ok
+test tests::analog_input_is_floored_at_min_analog_walk_speed ... ok
+test tests::apply_gravity_while_jumping_is_not_a_1_8_behaviour ... ok
+test tests::athena_crouch_capsule_is_50_cm_and_drops_the_centre_25_cm ... ok
+test tests::braking_distance_matches_the_friction_ode_and_converges_with_frame_rate ... ok
+test tests::controller_jump_arc_is_frame_rate_independent_within_the_midpoint_tolerance ... ok
+test tests::controller_metres_and_cm_agree ... ok
+test tests::crouch_blocks_jump_while_requested_but_not_on_the_frame_it_is_released ... ok
+test tests::default_params_are_pure_and_untuned ... ok
+test tests::directional_speed_follows_the_velocity_not_the_input ... ok
+test tests::external_writes_are_imported_as_teleports_and_requests ... ok
+test tests::free_fall_matches_the_closed_form_at_every_frame_rate ... ok
+test tests::gravity_scale_scales_apex_inversely ... ok
+test tests::held_jump_with_a_hold_time_relaunches_until_it_expires_but_the_1_8_pawn_has_none ... ok
+test tests::held_relaunches_keep_the_consecutive_jump_index_and_window ... ok
+test tests::holding_jump_makes_exactly_one_jump_until_the_key_is_released ... ok
+test tests::irregular_frame_times_do_not_change_the_result_much ... ok
+test tests::jump_apex_and_airtime_follow_the_recovered_numbers ... ok
+test tests::jump_apex_height_and_time_to_apex_equal_the_analytic_ue_result_for_the_1_8_values ... ok
+test tests::jump_frame_scale_and_the_consecutive_jump_table_follow_the_exe ... ok
+test tests::jump_hold_matches_the_real_1_8_client_trace ... ok
+test tests::jump_stands_a_crouched_pawn_and_keeps_the_apex ... ok
+test tests::jump_under_a_ceiling_bonks_the_head ... ok
+test tests::landing_returns_to_walking_resets_the_jump_count_and_an_air_press_is_never_buffered ... ok
+test tests::long_frames_are_substepped_like_the_engine ... ok
+test tests::a_sweep_into_a_steep_slope_stops ... ok
+test tests::pawn_spawns_standing_on_the_floor_inside_the_floor_distance_band ... ok
+test scene::hull_tests::the_player_controller_stops_at_a_hull_wall_slides_along_it_and_can_stand_on_a_low_one ... ok
+test tests::run_distance_is_frame_rate_independent_within_the_euler_tolerance ... ok
+test tests::run_state_requires_input_and_excludes_crouch ... ok
+test tests::a_crouched_pawn_does_not_walk_off_a_ledge_with_the_engine_default ... ok
+test tests::slope_limit_is_the_walkable_floor_angle ... ok
+test tests::speed_caps_are_the_recovered_stats ... ok
+test tests::standing_and_running_jump_equal_the_decoded_1_8_algorithm_at_30_hz ... ok
+test tests::standing_on_a_prop_top_is_grounded_with_a_raised_height ... ok
+test tests::standing_pawn_cannot_enter_a_low_slab_but_a_crouched_one_can ... ok
+test tests::terminal_velocity_caps_a_long_fall ... ok
+test tests::terrain_probes_are_cheap ... ok
+test tests::the_athena_pawn_ignores_the_jump_release_so_every_jump_is_the_full_hold ... ok
+test tests::the_athena_pawn_substeps_at_0_2_s_with_two_iterations ... ok
+test tests::the_drawn_height_keeps_the_capsule_floor_hover_so_takeoff_and_landing_do_not_pop ... ok
+test tests::the_fort_new_fall_velocity_only_clamps_downward_z_at_the_physics_volume_terminal_velocity ... ok
+test tests::the_jump_uses_the_recovered_project_gravity ... ok
+test tests::the_player_slides_around_a_rock_and_cannot_climb_its_steep_flank ... ok
+test tests::tuning_changes_gravity_and_jump_speed_and_is_reported ... ok
+test tests::tuning_parses_the_env_forms_and_ignores_garbage ... ok
+test tests::uncrouch_is_refused_under_a_ceiling_and_allowed_after_leaving_it ... ok
+test tests::step_up_succeeds_below_max_step_height_and_is_blocked_above_it ... ok
+test tests::walking_off_a_ledge_counts_as_the_first_jump ... ok
+test tests::walking_off_a_ledge_falls_and_lands ... ok
+test tests::walking_into_a_wall_slides_along_it ... ok
+test tests::walking_up_and_down_a_walkable_slope_stays_grounded ... ok
+test tests::no_tunnelling_through_a_trunk_at_extreme_speed_and_frame_time ... ok
+test tests::random_walks_never_penetrate_props_or_explode ... ok
+
+test result: ok. 82 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 1.73s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_net-f9e1e3ba6a9f48ee)
+
+running 19 tests
+test chat::tests::names_follow_the_relay_rules ... ok
+test chat::tests::chat_is_checked_word_by_word ... ok
+test interp::tests::angles_wrap ... ok
+test chat::tests::urls_are_refused ... ok
+test interp::tests::extrapolates_a_little_then_holds ... ok
+test interp::tests::interpolates_between_snapshots_behind_the_delay ... ok
+test proto::tests::fixture_for_the_worker_test ... ok
+test proto::tests::sizes_match_the_relay ... ok
+test interp::tests::old_and_duplicate_packets_are_ignored ... ok
+test proto::tests::every_message_roundtrips ... ok
+test session::tests::local_vitals_claims_follow_the_authority ... ok
+test session::tests::only_the_host_sends_storm ... ok
+test session::tests::control_messages_parse ... ok
+test proto::tests::truncated_and_trailing_bytes_are_rejected ... ok
+test session::tests::vitals_from_a_player_are_ignored ... ok
+test session::tests::send_rate_is_twenty_hertz ... ok
+test session::tests::server_damage_health_and_elim_reach_the_victim_and_the_shooter ... ok
+test session::tests::states_feed_the_remote_interpolator ... ok
+test tests::weapon_ids_are_stable ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_pak-519293780dc4dfd6)
+
+running 4 tests
+test tests::ascii_glob_matches_the_char_glob ... ok
+test tests::paths ... ok
+test tests::glob_basics ... ok
+test tests::order ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_rules-36ec98d729b67ea0)
+
+running 46 tests
+test containers::tests::a_held_search_completes_after_its_duration ... ok
+test containers::tests::releasing_use_or_losing_the_focus_interrupts_and_resets ... ok
+test containers::tests::the_tier_group_redirect_is_the_game_modes ... ok
+test fall_damage::tests::a_fall_below_the_lethal_fraction_leaves_one_health ... ok
+test containers::tests::the_toss_leaves_the_front_upwards_and_lands_on_the_base ... ok
+test fall_damage::tests::curve_values_follow_the_cooked_keys ... ok
+test fall_damage::tests::damage_at_full_health_no_shield ... ok
+test containers::tests::the_spawn_selection_keeps_the_chosen_share ... ok
+test fall_damage::tests::tracker_measures_apex_to_landing ... ok
+test pickups::tests::a_fully_taken_pickup_is_gone ... ok
+test pickups::tests::a_partly_taken_bandage_pile_stays_on_the_ground_with_the_rest ... ok
+test fall_damage::tests::falling_damage_skips_the_shield ... ok
+test pickups::tests::a_picked_up_item_flies_along_the_curve_and_arrives_after_the_fly_time ... ok
+test pickups::tests::a_pickup_the_pawn_dropped_is_never_auto_picked_up ... ok
+test pickups::tests::an_ammo_rest_at_the_feet_is_not_picked_up_again_until_the_pawn_walks_back_in ... ok
+test pickups::tests::a_toss_bounces_once_with_the_recovered_restitution_and_comes_to_rest ... ok
+test pickups::tests::begin_overlap_is_an_edge_and_the_host_can_veto ... ok
+test pickups::tests::bounce_reflects_with_bounciness_and_friction ... ok
+test pickups::tests::fly_time_is_the_curve_span_times_one_to_one_point_oh_five ... ok
+test pickups::tests::launch_velocity_is_45_degrees_at_distance_over_flytime ... ok
+test pickups::tests::landed_sound_is_throttled_to_once_a_second ... ok
+test pickups::tests::only_ammo_traps_and_resources_are_picked_up_by_walking_into_them_and_only_while_moving ... ok
+test pickups::tests::several_pickups_grabbed_in_quick_succession_all_arrive_and_nothing_vanishes ... ok
+test pickups::tests::the_use_key_picks_what_the_view_ray_hits_within_reach ... ok
+test pickups::tests::the_loot_curve_is_the_cooked_one ... ok
+test storm_state::tests::the_default_is_the_first_phase_fully_faded_in ... ok
+test storm_state::tests::the_radius_is_set_in_metres_and_reset_restores_the_phase_zero_zone ... ok
+test storm_state::tests::turning_on_replays_the_25_second_linear_fade ... ok
+test storm_zones::tests::crt_rand_matches_msvc ... ok
+test storm_zones::tests::damage_ticks_once_a_second_outside_only_at_the_ge_level ... ok
+test storm_zones::tests::the_island_volume_contains_the_map_centre_and_not_the_spawn_island ... ok
+test storm_zones::tests::the_ge_level_follows_the_phase_after_the_first ... ok
+test storm_zones::tests::the_storm_forms_60_s_after_the_last_stop_at_185000_cm_then_runs_1500_s ... ok
+test storm_zones::tests::the_table_matches_athena_game_data ... ok
+test traps::tests::arming_blocks_triggers_until_arm_time ... ok
+test traps::tests::fire_delay_then_damage_then_reload_cooldown ... ok
+test traps::tests::jump_pad_has_no_delay_or_reload_and_fires_each_frame_it_is_touched ... ok
+test traps::tests::jump_pad_picks_the_quadrant_nearest_the_aim ... ok
+test traps::tests::nobody_on_it_means_no_fire_and_no_durability_loss ... ok
+test traps::tests::durability_runs_out_then_destroyed_after_delay ... ok
+test traps::tests::leaving_during_fire_delay_still_fires ... ok
+test traps::tests::shield_takes_damage_first ... ok
+test traps::tests::the_wall_trap_faces_the_side_it_was_placed_from ... ok
+test traps::tests::the_trigger_box_overlap_counts_the_capsule ... ok
+test traps::tests::spike_animation_follows_the_timelines ... ok
+test storm_zones::tests::the_chain_nests_every_zone_in_the_previous_one ... ok
+
+test result: ok. 46 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_terrain-cf4157593be2f8ee)
+
+running 5 tests
+test tests::height_range_is_exact_and_local_is_a_translation ... ok
+test real::the_athena_landscape_sits_on_one_component_lattice ... ok
+test tests::mapping_round_trips ... ok
+test tests::normal_ray_and_segment_agree_with_the_surface ... ok
+test tests::samples_are_exact_and_the_quad_split_is_the_ue_diagonal ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_testdata-b136157ef2578679)
+
+running 1 test
+test tests::old_root_exists ... ignored, parity: needs the original FortniteRuntime tree (set FN_OLD_ROOT, run with --ignored)
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_uasset-7eeb6d9cdff3cd8d)
+
+running 1 test
+test kismet::tests::js_numbers ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_ueio-03d5e25be451e62e)
+
+running 2 tests
+test tests::half_known ... ok
+test tests::half_roundtrip ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/fn_weapons-5300c4ee61713b6f)
+
+running 90 tests
+test inventory_model::tests::ammo_and_resources_are_one_capped_stack_outside_the_backpack ... ok
+test inventory_model::tests::backpack_numerator_adds_overflow ... ok
+test inventory_model::tests::drops_respect_can_be_dropped_and_clamp_to_the_stack ... ok
+test inventory_model::tests::focus_returns_to_the_previous_slot_or_the_pickaxe ... ok
+test inventory_model::tests::pass_one_takes_the_first_empty_accepting_slot ... ok
+test inventory_model::tests::slot_rules_match_the_athena_game_mode_data ... ok
+test inventory_model::tests::swap_checks_the_destination_types_and_moves_the_focus ... ok
+test inventory_model::tests::pass_two_replaces_from_the_focused_slot ... ok
+test inventory_model::tests::stacks_merge_then_create_up_to_the_backpack ... ok
+test inventory_model::tests::wheel_cycles_occupied_slots_with_wrap ... ok
+test native_attachment::tests::reentrant_callbacks_do_not_leave_stale_weapon_loads ... ok
+test native_attachment::tests::flag_gate_uses_only_low_bit_and_full_byte ... ok
+test native_attachment::tests::no_current_weapon_only_detaches_old ... ok
+test native_attachment::tests::owner_gates_do_not_suppress_attachment_event ... ok
+test native_attachment::tests::switch_preserves_original_order_and_previous_argument ... ok
+test native_attachment::tests::weapon_attachment_reloads_components_and_owner_after_callbacks ... ok
+test native_inventory::tests::absent_player_and_quickbars_stop_at_the_original_gates ... ok
+test native_attachment::tests::unchanged_non_null_weapon_returns_without_callbacks ... ok
+test native_inventory::tests::failed_validation_does_not_find_or_mutate ... ok
+test native_inventory::tests::swaps_require_success_before_final_notification ... ok
+test native_inventory::tests::fresh_item_adds_before_final_notification ... ok
+test native_inventory::tests::null_item_still_resolves_player_first ... ok
+test native_inventory::tests::same_slot_returns_false_after_modified_even_on_another_bar ... ok
+test native_quickbar::tests::activation_bounds_fail_before_mutation_and_raw_enum_is_not_normalized ... ok
+test native_quickbar::tests::activation_state_switches_bar_before_unchanged_slot_check ... ok
+test native_quickbar::tests::activation_previous_index_changes_only_on_force_or_return_to_previous ... ok
+test native_quickbar::tests::active_bar_preserves_original_sentinel_and_priority ... ok
+test native_quickbar::tests::constructor_indices_are_zero_even_with_no_slots ... ok
+test native_quickbar::tests::equip_rechecks_bar_and_does_not_equip_after_failed_toggle ... ok
+test native_quickbar::tests::equip_native_item_type_routing_covers_every_byte ... ok
+test native_quickbar::tests::equip_null_and_missing_quickbars_stop_before_type_lookup ... ok
+test native_quickbar::tests::insertion_overwrites_first_without_discarding_group_members ... ok
+test native_quickbar::tests::original_rpc_validation_keeps_special_signed_selectors ... ok
+test native_quickbar::tests::placement_enum_handling_matches_this_native_function_not_other_apis ... ok
+test native_quickbar::tests::placement_preserves_bounds_flags_and_type_membership ... ok
+test native_quickbar::tests::removal_is_stable_removes_duplicates_and_accepts_zero ... ok
+test native_quickbar::tests::find_scans_group_members_and_returns_first_slot_not_guid_index ... ok
+test recovered_ads::tests::a_scope_camera_that_derives_from_the_hold_camera_releases_with_its_own_out_time ... ok
+test native_quickbar::tests::slotted_lookup_uses_first_guid_even_when_zero_and_ignores_slot_flags ... ok
+test recovered_ads::tests::hold_aims_while_down_and_the_camera_blends_in_transition_time ... ok
+test recovered_ads::tests::ease_in_out_matches_the_engine_formula_and_is_symmetric ... ok
+test recovered_ads::tests::a_tap_shorter_than_the_start_delay_never_plays_the_timeline ... ok
+test recovered_ads::tests::blend_in_uses_the_camera_transition_time_not_the_curve_parameter ... ok
+test recovered_ads::tests::release_targeting_ends_held_and_toggled_targeting ... ok
+test recovered_ads::tests::releasing_mid_blend_keeps_the_hold_entry_and_its_stored_rate ... ok
+test recovered_ads::tests::releasing_waits_0_1_s_then_restores_and_reverses_the_timeline ... ok
+test recovered_ads::tests::scope_timeline_waits_0_2_s_then_plays_0_3_s_and_the_amount_follows_the_curve ... ok
+test recovered_ads::tests::toggle_flips_on_press_edges_only ... ok
+test recovered_ads::tests::unscoped_weapons_never_run_the_scope_sequence ... ok
+test recovered_ads::tests::view_blend_functions_follow_the_exe_switch ... ok
+test recovered_healing::tests::original_ceil_gate_is_not_a_simple_health_less_than_cap ... ok
+test recovered_ads::tests::look_scale_picks_the_scope_or_ads_slider_only_while_targeting ... ok
+test recovered_healing::tests::original_trigger_path_caps_then_truncates_the_effect_level ... ok
+test recovered_inventory::tests::equip_widget_indices_are_one_based_first_selected_wins ... ok
+test recovered_inventory::tests::drag_drop_respects_both_casts_and_drop_permission ... ok
+test recovered_inventory::tests::modal_does_not_inherit_drag_drop_minimum ... ok
+test recovered_inventory::tests::split_flag_and_shift_each_request_floor_half_with_minimum_one ... ok
+test recovered_ads::tests::losing_the_weapon_drops_everything ... ok
+test recovered_panel::tests::perform_equip_follows_the_bytecode_branch_order ... ok
+test recovered_panel::tests::drop_target_highlights ... ok
+test recovered_panel::tests::the_bound_action_is_unequip_only_for_slotted_non_14_items ... ok
+test recovered_panel::tests::tile_overlay_is_one_to_five ... ok
+test recovered_recoil::tests::athena_path_uses_the_athena_speeds_and_a_full_recovery_fraction ... ok
+test recovered_recoil::tests::countering_the_recoil_with_input_reduces_what_recovery_takes_back ... ok
+test recovered_recoil::tests::a_shot_kicks_the_view_up_and_the_recovery_returns_it_exactly_without_input ... ok
+test recovered_recoil::tests::athena_add_recoil_is_magnitude_at_an_angle_from_vertical ... ok
+test recovered_recoil::tests::crt_rand_is_the_ucrt_lcg ... ok
+test recovered_recoil::tests::finterp_to_is_the_engine_function ... ok
+test recovered_recoil::tests::is_nearly_zero_normalises_each_axis ... ok
+test recovered_recoil::tests::legacy_add_recoil_downsights_multiplier_and_the_pending_clamp ... ok
+test recovered_recoil::tests::legacy_add_recoil_uses_the_vertical_and_horizontal_columns ... ok
+test recovered_recoil::tests::manual_counter_input_is_cleared_once_nothing_is_outstanding ... ok
+test recovered_recoil::tests::recoil_values_follow_the_scale_columns_and_the_gamepad_flag ... ok
+test recovered_recoil::tests::sin_cos_matches_the_compiled_polynomial_over_the_recoil_range_and_beyond ... ok
+test recovered_recoil::tests::update_eases_the_pending_kick_into_the_look_delta_and_records_it_for_recovery ... ok
+test recovered_reload::tests::idle_returns_zero_without_using_invalid_inputs ... ok
+test recovered_recoil::tests::recovery_waits_for_the_recovery_delay_after_the_last_shot ... ok
+test recovered_reload::tests::original_divide_by_zero_is_not_replaced_by_epsilon ... ok
+test recovered_reload::tests::original_negative_and_upper_limit_branches ... ok
+test recovered_reload::tests::unordered_compare_and_signed_zero_follow_native_branches ... ok
+test recovered_reload::tests::uses_stored_duration_and_scale ... ok
+test reload_ammo::tests::a_short_stack_only_moves_what_exists ... ok
+test reload_ammo::tests::can_reload_follows_the_native_order ... ok
+test reload_ammo::tests::magazine_rifle_transfers_everything_at_reload_time ... ok
+test reload_ammo::tests::montage_time_loops_the_loop_section_then_plays_the_outro ... ok
+test reload_ammo::tests::play_rate_makes_a_full_reload_last_reload_time ... ok
+test reload_ammo::tests::shotgun_with_a_short_stack_ends_through_the_outro ... ok
+test reload_ammo::tests::shotgun_inserts_one_shell_per_loop_pass_and_takes_reload_time_from_empty ... ok
+test reload_ammo::tests::timers_fire_strictly_after_their_expire_time_like_the_engine_timer_manager ... ok
+test reload_ammo::tests::transfer_and_add_ammo_arithmetic ... ok
+
+test result: ok. 90 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_building
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_camera
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_combat
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_hitreg
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_hull
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_live
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_mc
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_mechanics
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_mesh
+
+running 1 test
+test crates/fn-mesh/src/lib.rs - (line 3) - compile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+[1m[92m   Doc-tests[0m fn_movement
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_net
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_pak
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_rules
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_terrain
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_testdata
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_uasset
+
+running 1 test
+test crates/fn-uasset/src/lib.rs - (line 38) - compile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+[1m[92m   Doc-tests[0m fn_ueio
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[1m[92m   Doc-tests[0m fn_weapons
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

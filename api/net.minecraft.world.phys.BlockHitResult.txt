@@ -1,0 +1,22 @@
+Compiled from "BlockHitResult.java"
+public class net.minecraft.world.phys.BlockHitResult extends net.minecraft.world.phys.HitResult {
+  public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, net.minecraft.world.phys.BlockHitResult> STREAM_CODEC;
+  private final net.minecraft.core.Direction direction;
+  private final net.minecraft.core.BlockPos blockPos;
+  private final boolean miss;
+  private final boolean inside;
+  private final boolean worldBorderHit;
+  public static net.minecraft.world.phys.BlockHitResult miss(net.minecraft.world.phys.Vec3, net.minecraft.core.Direction, net.minecraft.core.BlockPos);
+  public net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3, net.minecraft.core.Direction, net.minecraft.core.BlockPos, boolean);
+  public net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3, net.minecraft.core.Direction, net.minecraft.core.BlockPos, boolean, boolean);
+  private net.minecraft.world.phys.BlockHitResult(boolean, net.minecraft.world.phys.Vec3, net.minecraft.core.Direction, net.minecraft.core.BlockPos, boolean, boolean);
+  public net.minecraft.world.phys.BlockHitResult withDirection(net.minecraft.core.Direction);
+  public net.minecraft.world.phys.BlockHitResult withPosition(net.minecraft.core.BlockPos);
+  public net.minecraft.world.phys.BlockHitResult hitBorder();
+  public net.minecraft.core.BlockPos getBlockPos();
+  public net.minecraft.core.Direction getDirection();
+  public net.minecraft.world.phys.HitResult$Type getType();
+  public boolean isInside();
+  public boolean isWorldBorderHit();
+  static {};
+}

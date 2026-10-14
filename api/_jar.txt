@@ -1,0 +1,1 @@
+classpath: /home/runner/.gradle/caches/fabric-loom/26.3/minecraft-common.jar:/home/runner/.gradle/caches/fabric-loom/26.3/minecraft-client-only.jar

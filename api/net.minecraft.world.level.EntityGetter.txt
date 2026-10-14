@@ -1,0 +1,16 @@
+Compiled from "EntityGetter.java"
+public interface net.minecraft.world.level.EntityGetter {
+  public abstract java.util.List<net.minecraft.world.entity.Entity> getEntities(net.minecraft.world.entity.Entity, net.minecraft.world.phys.AABB, java.util.function.Predicate<? super net.minecraft.world.entity.Entity>);
+  public abstract <T extends net.minecraft.world.entity.Entity> java.util.List<T> getEntities(net.minecraft.world.level.entity.EntityTypeTest<net.minecraft.world.entity.Entity, T>, net.minecraft.world.phys.AABB, java.util.function.Predicate<? super T>);
+  public default <T extends net.minecraft.world.entity.Entity> java.util.List<T> getEntitiesOfClass(java.lang.Class<T>, net.minecraft.world.phys.AABB, java.util.function.Predicate<? super T>);
+  public abstract java.util.List<? extends net.minecraft.world.entity.player.Player> players();
+  public default java.util.List<net.minecraft.world.entity.Entity> getEntities(net.minecraft.world.entity.Entity, net.minecraft.world.phys.AABB);
+  public default boolean isUnobstructed(net.minecraft.world.entity.Entity, net.minecraft.world.phys.shapes.VoxelShape);
+  public default <T extends net.minecraft.world.entity.Entity> java.util.List<T> getEntitiesOfClass(java.lang.Class<T>, net.minecraft.world.phys.AABB);
+  public default java.util.List<net.minecraft.world.phys.shapes.VoxelShape> getEntityCollisions(net.minecraft.world.entity.Entity, net.minecraft.world.phys.AABB);
+  public default net.minecraft.world.entity.player.Player getNearestPlayer(double, double, double, double, java.util.function.Predicate<net.minecraft.world.entity.Entity>);
+  public default net.minecraft.world.entity.player.Player getNearestPlayer(net.minecraft.world.entity.Entity, double);
+  public default net.minecraft.world.entity.player.Player getNearestPlayer(double, double, double, double, boolean);
+  public default boolean hasNearbyAlivePlayer(double, double, double, double);
+  public default net.minecraft.world.entity.player.Player getPlayerByUUID(java.util.UUID);
+}

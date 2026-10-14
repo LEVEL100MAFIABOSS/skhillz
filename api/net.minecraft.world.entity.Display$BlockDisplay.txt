@@ -1,0 +1,16 @@
+Compiled from "Display.java"
+public class net.minecraft.world.entity.Display$BlockDisplay extends net.minecraft.world.entity.Display {
+  public static final java.lang.String TAG_BLOCK_STATE;
+  private static final net.minecraft.network.syncher.EntityDataAccessor<net.minecraft.world.level.block.state.BlockState> DATA_BLOCK_STATE_ID;
+  private net.minecraft.world.entity.Display$BlockDisplay$BlockRenderState blockRenderState;
+  public net.minecraft.world.entity.Display$BlockDisplay(net.minecraft.world.entity.EntityType<?>, net.minecraft.world.level.Level);
+  protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData$Builder);
+  public void onSyncedDataUpdated(net.minecraft.network.syncher.EntityDataAccessor<?>);
+  private net.minecraft.world.level.block.state.BlockState getBlockState();
+  private void setBlockState(net.minecraft.world.level.block.state.BlockState);
+  protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput);
+  protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput);
+  public net.minecraft.world.entity.Display$BlockDisplay$BlockRenderState blockRenderState();
+  protected void updateRenderSubState(boolean, float);
+  static {};
+}

@@ -1,0 +1,20 @@
+1589:       192: invokevirtual #899                // Method collide:(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
+2856:        56: invokestatic  #1366               // Method net/minecraft/world/phys/shapes/Shapes.collide:(Lnet/minecraft/core/Direction$Axis;Lnet/minecraft/world/phys/AABB;Ljava/lang/Iterable;D)D
+2860:  private net.minecraft.world.phys.Vec3 collide(net.minecraft.world.phys.Vec3);
+2877:        25: invokevirtual #1377               // Method net/minecraft/world/level/Level.getEntityCollisions:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;
+2892:        50: invokestatic  #1381               // Method collideBoundingBox:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/level/Level;Ljava/util/List;)Lnet/minecraft/world/phys/Vec3;
+3021:       310: invokestatic  #1395               // Method collideWithShapes:(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/List;)Lnet/minecraft/world/phys/Vec3;
+3113:  public static net.minecraft.world.phys.Vec3 collideBoundingBox(net.minecraft.world.entity.Entity, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.AABB, net.minecraft.world.level.Level, java.util.List<net.minecraft.world.phys.shapes.VoxelShape>);
+3126:        18: invokestatic  #1395               // Method collideWithShapes:(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/List;)Lnet/minecraft/world/phys/Vec3;
+3129:  public static net.minecraft.world.phys.Vec3 collideBoundingBox(net.minecraft.world.phys.shapes.CollisionContext, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.AABB, net.minecraft.world.level.Level, java.util.List<net.minecraft.world.phys.shapes.VoxelShape>);
+3142:        18: invokestatic  #1395               // Method collideWithShapes:(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/List;)Lnet/minecraft/world/phys/Vec3;
+3150:         3: invokevirtual #1377               // Method net/minecraft/world/level/Level.getEntityCollisions:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;
+3232:  private static net.minecraft.world.phys.Vec3 collideWithShapes(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.AABB, java.util.List<net.minecraft.world.phys.shapes.VoxelShape>);
+3267:        74: invokestatic  #1366               // Method net/minecraft/world/phys/shapes/Shapes.collide:(Lnet/minecraft/core/Direction$Axis;Lnet/minecraft/world/phys/AABB;Ljava/lang/Iterable;D)D
+3499:  public boolean collidedWithFluid(net.minecraft.world.level.material.FluidState, net.minecraft.core.BlockPos, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3);
+3514:        25: invokevirtual #1595               // Method collidedWithShapeMovingFrom:(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Ljava/util/List;)Z
+3521:  public boolean collidedWithShapeMovingFrom(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, java.util.List<net.minecraft.world.phys.AABB>);
+3534:        19: invokevirtual #1599               // Method net/minecraft/world/phys/AABB.collidedAlongVector:(Lnet/minecraft/world/phys/Vec3;Ljava/util/List;)Z
+11944:       110: invokevirtual #1595               // Method collidedWithShapeMovingFrom:(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Ljava/util/List;)Z
+11956:       135: invokevirtual #4040               // Method collidedWithFluid:(Lnet/minecraft/world/level/material/FluidState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Z
+12002:       240: ldc_w         #4065               // String Block being collided with

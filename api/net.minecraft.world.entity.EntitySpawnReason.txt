@@ -1,0 +1,30 @@
+Compiled from "EntitySpawnReason.java"
+public final class net.minecraft.world.entity.EntitySpawnReason extends java.lang.Enum<net.minecraft.world.entity.EntitySpawnReason> {
+  public static final net.minecraft.world.entity.EntitySpawnReason NATURAL;
+  public static final net.minecraft.world.entity.EntitySpawnReason CHUNK_GENERATION;
+  public static final net.minecraft.world.entity.EntitySpawnReason SPAWNER;
+  public static final net.minecraft.world.entity.EntitySpawnReason STRUCTURE;
+  public static final net.minecraft.world.entity.EntitySpawnReason BREEDING;
+  public static final net.minecraft.world.entity.EntitySpawnReason MOB_SUMMONED;
+  public static final net.minecraft.world.entity.EntitySpawnReason JOCKEY;
+  public static final net.minecraft.world.entity.EntitySpawnReason EVENT;
+  public static final net.minecraft.world.entity.EntitySpawnReason CONVERSION;
+  public static final net.minecraft.world.entity.EntitySpawnReason REINFORCEMENT;
+  public static final net.minecraft.world.entity.EntitySpawnReason TRIGGERED;
+  public static final net.minecraft.world.entity.EntitySpawnReason BUCKET;
+  public static final net.minecraft.world.entity.EntitySpawnReason SPAWN_ITEM_USE;
+  public static final net.minecraft.world.entity.EntitySpawnReason COMMAND;
+  public static final net.minecraft.world.entity.EntitySpawnReason DISPENSER;
+  public static final net.minecraft.world.entity.EntitySpawnReason PATROL;
+  public static final net.minecraft.world.entity.EntitySpawnReason TRIAL_SPAWNER;
+  public static final net.minecraft.world.entity.EntitySpawnReason LOAD;
+  public static final net.minecraft.world.entity.EntitySpawnReason DIMENSION_TRAVEL;
+  private static final net.minecraft.world.entity.EntitySpawnReason[] $VALUES;
+  public static net.minecraft.world.entity.EntitySpawnReason[] values();
+  public static net.minecraft.world.entity.EntitySpawnReason valueOf(java.lang.String);
+  private net.minecraft.world.entity.EntitySpawnReason();
+  public static boolean isSpawner(net.minecraft.world.entity.EntitySpawnReason);
+  public static boolean ignoresLightRequirements(net.minecraft.world.entity.EntitySpawnReason);
+  private static net.minecraft.world.entity.EntitySpawnReason[] $values();
+  static {};
+}

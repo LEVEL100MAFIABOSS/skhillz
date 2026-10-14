@@ -1,0 +1,14 @@
+Compiled from "ClipContext.java"
+public class net.minecraft.world.level.ClipContext {
+  private final net.minecraft.world.phys.Vec3 from;
+  private final net.minecraft.world.phys.Vec3 to;
+  private final net.minecraft.world.level.ClipContext$Block block;
+  private final net.minecraft.world.level.ClipContext$Fluid fluid;
+  private final net.minecraft.world.phys.shapes.CollisionContext collisionContext;
+  public net.minecraft.world.level.ClipContext(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, net.minecraft.world.level.ClipContext$Block, net.minecraft.world.level.ClipContext$Fluid, net.minecraft.world.entity.Entity);
+  public net.minecraft.world.level.ClipContext(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, net.minecraft.world.level.ClipContext$Block, net.minecraft.world.level.ClipContext$Fluid, net.minecraft.world.phys.shapes.CollisionContext);
+  public net.minecraft.world.phys.Vec3 getTo();
+  public net.minecraft.world.phys.Vec3 getFrom();
+  public net.minecraft.world.phys.shapes.VoxelShape getBlockShape(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.BlockGetter, net.minecraft.core.BlockPos);
+  public net.minecraft.world.phys.shapes.VoxelShape getFluidShape(net.minecraft.world.level.material.FluidState, net.minecraft.world.level.BlockGetter, net.minecraft.core.BlockPos);
+}
