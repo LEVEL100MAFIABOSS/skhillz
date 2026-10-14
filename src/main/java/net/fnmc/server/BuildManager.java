@@ -229,7 +229,7 @@ public final class BuildManager {
 			JsonObject pv = e.getAsJsonObject();
 			String player = pv.get("player").getAsString();
 			discard(previews.remove(player));
-			BlockState ghost = (pv.get("ok").getAsBoolean() ? Blocks.LIGHT_BLUE_STAINED_GLASS : Blocks.RED_STAINED_GLASS).defaultBlockState();
+			BlockState ghost = (pv.get("ok").getAsBoolean() ? Blocks.GLASS : Blocks.TINTED_GLASS).defaultBlockState();
 			List<Entity> list = new ArrayList<>();
 			for (JsonElement b : pv.getAsJsonArray("boxes")) {
 				Entity d = spawnBox(b.getAsJsonObject(), ghost, true);

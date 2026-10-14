@@ -50,7 +50,7 @@ public final class ServerHooks {
 		ServerTickEvents.END_SERVER_TICK.register(ServerHooks::tick);
 
 		ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
-			if (entity.getTags().contains(BuildManager.TAG) && !BuildManager.LIVE.contains(entity.getUUID())) entity.discard();
+			if (entity.entityTags().contains(BuildManager.TAG) && !BuildManager.LIVE.contains(entity.getUUID())) entity.discard();
 		});
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
 			if (BuildManager.LIVE.contains(entity.getUUID())) BuildManager.get(level).onDisplayUnloaded(entity);
